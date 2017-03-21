@@ -50,13 +50,13 @@ set cindent sw=2
 " set foldlevel=99
 " set foldlevelstart=99
 set scrolloff=999 
-" MAPPINGS {{{1
+" Mappings {{{1
 let mapleader = ","
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
 
 " Edit and source the vimrc file
-nnoremap <leader>v :e ~/.vimrc<CR>
+nnoremap <leader>v :e ~/vimconfig/.vimrc<CR>
 
 " Do not use <Esc> - it is too slow
 inoremap jk <Esc>
@@ -73,7 +73,7 @@ vnoremap > >gv
 " inoremap <F2> [[][]]<ESC>hhhi
 " nnoremap <F3> :VikiTasks<CR>
 
-" navigating buffers
+" navigating between buffers
 nnoremap <leader>bb :b#<CR>
 
 " search for a word under the cursor:
@@ -95,7 +95,7 @@ nnoremap <leader>m :tabnext<CR>
 
 " Commands {{{1
 if has("autocmd")
-  autocmd! BufWritePost .vimrc source ~/.vimrc
+  autocmd! BufWritePost .vimrc :w! ~/.vimrc | source ~/.vimrc
   augroup filetype_tex
     autocmd!
     autocmd FileType tex :setlocal spell spelllang=en_gb
