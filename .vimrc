@@ -20,6 +20,7 @@ Plugin 'tComment'
 Plugin 'ctrlp.vim'
 Plugin 'SuperTab'
 Plugin 'UltiSnips'
+Plugin 'vim-snippets'
 " Plugin 'MRU'
 Plugin 'goyo.vim'
 Plugin 'limelight.vim'
@@ -107,7 +108,14 @@ if has("autocmd")
     autocmd FileType cuda nnoremap <buffer> <F5> :update<Bar>execute '!/usr/local/cuda/bin/nvcc -ptx %:p:t'
   augroup END
 endif
-" LaTeX-Suit{{{1
+" Plugins' settings{{{1
+" LaTeX-Suit{{{2
 let g:Tex_DefaultTargetFormat='pdf'
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='evince'
+" Airline{{{2
+set laststatus=2
+" UltiSnips & YCM{{{2
+let g:UltiSnipsExpandTrigger="<c-space>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
