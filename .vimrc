@@ -46,6 +46,7 @@ set tabstop=2
 set softtabstop=2
 set expandtab
 set cindent sw=2
+set lines=70 columns=150
 
 " Settings {{{1
 " set foldlevel=99
@@ -83,6 +84,8 @@ nnoremap <leader>g :silent execute "grep! -r " . shellescape(expand("<cword>")) 
 " Change working directory to the one of the edited file:
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
+nnoremap <C-M> :CtrlPMRU<CR>
+
 " Easy windows and tabs navigation {{{2
 " " windows
 " nnoremap <C-h> <C-W>h
@@ -115,6 +118,14 @@ let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='evince'
 " Airline{{{2
 set laststatus=2
+" Goyo{{{2
+" g:goyo_width (default: 80)
+" g:goyo_margin_top (default: 4)
+" g:goyo_margin_bottom (default: 4)
+let g:goyo_width=100
+" Limelight{{{2
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 " UltiSnips & YCM{{{2
 let g:UltiSnipsExpandTrigger="<c-space>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
