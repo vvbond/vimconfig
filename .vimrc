@@ -20,16 +20,17 @@ Plugin 'tComment'
 Plugin 'ctrlp.vim'
 Plugin 'SuperTab'
 Plugin 'UltiSnips'
-Plugin 'vim-snippets'
+Plugin 'honza/vim-snippets'
 " Plugin 'MRU'
 Plugin 'goyo.vim'
-Plugin 'limelight.vim'
+Plugin 'junegunn/limelight.vim'
 " Plugin 'AutomaticLaTeXPlugin'
-Plugin 'YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'taglist.vim'
 Plugin 'Python-mode-klen'
 Plugin 'fugitive.vim'
 Plugin 'vim-airline'
+Plugin 'JuliaEditorSupport/julia-vim'
 " --------------------------------------------------------------------
 call vundle#end()
 filetype plugin indent on
@@ -110,6 +111,8 @@ if has("autocmd")
     autocmd FileType cuda inoremap <buffer> <F5> <C-o>:update<Bar>execute '!/usr/local/cuda/bin/nvcc -ptx %:p:t'
     autocmd FileType cuda nnoremap <buffer> <F5> :update<Bar>execute '!/usr/local/cuda/bin/nvcc -ptx %:p:t'
   augroup END
+  autocmd! BufReadPost  fdel.properties.overwrite :set filetype=config
+  autocmd! BufReadPost  fdel.properties.output.Event_1 :set filetype=config
 endif
 " Plugins' settings{{{1
 " LaTeX-Suit{{{2
